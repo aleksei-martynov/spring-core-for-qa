@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.fest.assertions.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration({"classpath:test-spring-context.xml", "classpath:spring-context.xml"})
+@ContextConfiguration({"classpath:test-spring-config.xml", "classpath:spring-config.xml"})
 @ActiveProfiles({"test","system-test"})
 @TestPropertySource("classpath:application.properties")
 @Transactional

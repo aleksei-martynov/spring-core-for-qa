@@ -17,7 +17,7 @@ import static org.mockito.Matchers.anyLong;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration({"classpath:test-spring-context.xml", "classpath:spring-context.xml"})
+@ContextConfiguration({"classpath:test-spring-config.xml", "classpath:spring-config.xml"})
 @ActiveProfiles("test")
 public class DemoIntegrationTestWithSpringBootTest {
     @Autowired private ReportingService reportingService;

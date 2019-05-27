@@ -7,12 +7,12 @@ import com.acme.banking.dbo.spring.service.TransferService;
 import org.slf4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class TestApp {
+public class ApplicationTest {
     public static void main(String[] args) {
         System.setProperty("spring.profiles.active", "test,prod"); //-Dspring.profiles.active="test,prod"
 
         /** ApplicationContext vs BeanFactory: https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#context-introduction-ctx-vs-beanfactory */
-        try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("test-spring-context.xml", "spring-context.xml")) {
+        try(ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("test-spring-config.xml", "spring-config.xml")) {
             //TODO Spring component acqusition styles: by type, by id, both
             Logger logger = context.getBean(Logger.class);
 
@@ -28,7 +28,7 @@ public class TestApp {
             logger.info(">>>>> " + reportingService.accountReport(2L));
 
             accountRepository.findAll().forEach(account -> logger.info(">>>>> " + account));
-            //TODO And now move to spring-context.xml and make action 'Show Diagram...'
+            //TODO And now move to spring-config.xml and make action 'Show Diagram...'
         }
     }
 }
