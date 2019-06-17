@@ -43,6 +43,8 @@ public class ReportingService {
     @Authenticated @RolesAllowed("admin")
     @Transactional
     @Retry
+    @Async
+    @Cacheable
     */
     public String reportForAccount(long id) {
         Account account = accounts.findById(id);
