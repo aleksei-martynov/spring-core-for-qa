@@ -8,7 +8,7 @@ import com.acme.banking.dbo.legacy.domain.AccountType;
  */
 public class SavingAccount implements Account {
     private long id;
-    private double amount;
+    private double amount = 0;
 
     public SavingAccount(long id, double amount) {
         this.id = id;
